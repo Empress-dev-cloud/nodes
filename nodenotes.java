@@ -22,17 +22,17 @@ public class nodenotes {
     void add(String song) {
         Node n = new Node(song);
         if (head == null) { head = n; return; }
-        Node cur = head;
-        while (cur.next != null) cur = cur.next;
-        cur.next = n;
+        Node steps = head;
+        while (steps.next != null) steps = steps.next;
+        steps.next = n;
     }
 
     void delete(String title) {
         if (head == null) return;
         if (head.song.equals(title)) { head = head.next; return; }
-        Node cur = head;
-        while (cur.next != null && !cur.next.song.equals(title)) cur = cur.next;
-        if (cur.next != null) cur.next = cur.next.next;
+        Node steps = head;
+        while (steps.next != null && !steps.next.song.equals(title)) steps = steps.next;
+        if (steps.next != null) steps.next = steps.next.next;
     }
 
     public static void main(String[] args) {
